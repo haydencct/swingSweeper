@@ -5,7 +5,7 @@ import java.awt.event.*;
 import javax.swing.*;
 
 public class Menu {
-	public static void main(String[] args) {
+	public void main(String[] args) {
 		MineFrame frame = new MineFrame();
 		frame.addWindowListener(new WindowAdapter() {
 			public void windowClosing(WindowEvent e) {
@@ -16,7 +16,7 @@ public class Menu {
 }
 
 class MineFrame extends JFrame implements ActionListener {
-	static final long serialVersionUID = 1L;
+	private static final long serialVersionUID = 1L;
 	private JTextField mineRate, mapWidth, mapHeight;
 
 	public MineFrame() {
@@ -54,7 +54,7 @@ class MineFrame extends JFrame implements ActionListener {
 
 	public void actionPerformed(ActionEvent e) {
 		// this line is pretty long, but it just turns all the user inputs from strings to integers in one line, then gives them to the method generateMap within the class Map.
-			int[][]map = Map.generateMap((Double.parseDouble(mineRate.getText())), Integer.parseInt(mapWidth.getText()), Integer.parseInt(mapHeight.getText()));
-			Window.makeGame(map);
+		Map.generateMap(Double.parseDouble(mineRate.getText()), Integer.parseInt(mapWidth.getText()), Integer.parseInt(mapHeight.getText()));
+			
 		}
 	}
