@@ -30,7 +30,4 @@ public class Map {
 		}
 		map = adj;
 		return adj;
-	}
-
-	public int[][] grabMap() {
-		return Map.map; }}
+	}}
